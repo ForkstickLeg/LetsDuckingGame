@@ -6,8 +6,6 @@ on:
       - "master-next"
     paths:
       - "api/**"
-    paths-ignore:
-      - "**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
