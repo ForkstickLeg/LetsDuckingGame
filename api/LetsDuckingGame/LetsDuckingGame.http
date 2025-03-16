@@ -1,0 +1,6 @@
+@LetsDuckingGame_HostAddress = http://localhost:5125
+
+GET {{LetsDuckingGame_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

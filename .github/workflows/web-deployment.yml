@@ -1,0 +1,17 @@
+name: Web Deployment
+on:
+  push:
+    branches:
+      - "master"
+    paths:
+      - "api/**"
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Trigger Coolify Web Webhook
+        run: |
+          curl --request GET "${{ secrets.COOLIFY_WEB_WEBHOOK }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
