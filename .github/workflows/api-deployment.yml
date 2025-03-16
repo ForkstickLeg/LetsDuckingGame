@@ -3,8 +3,11 @@ on:
   push:
     branches:
       - "master"
+      - "master-next"
     paths:
       - "api/**"
+    paths-ignore:
+      - "**"
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -14,4 +17,8 @@ jobs:
 
       - name: Trigger Coolify API Webhook
         run: |
-          curl --request GET "${{ secrets.COOLIFY_API_WEBHOOK }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          if [[ $GITHUB_REF_NAME == 'master' ]]; then
+              curl --request GET "${{ secrets.COOLIFY_API_WEBHOOK }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          else
+              curl --request GET "${{ secrets.COOLIFY_API_DEV_WEBHOOK }}" --header "Authorization: Bearer ${{ secrets.COOLIFY_TOKEN }}"
+          fi
