@@ -1,12 +1,12 @@
 [phases.setup]
-nixPkgs = ["dotnet-sdk_8"]
+nixPkgs = ["dotnet-sdk_8", "nodejs-22_x"]
 
 [phases.build]
 environment = { NIXPACKS_NODE_VERSION = "22" }
 cacheDirectories = ["/root/.nuget/packages", "/app/LetsDuckingGame.Client/node_modules"]
 cmds = [
   "cd LetsDuckingGame.Client && npm ci && npm run build",
-  "dotnet publish -c Release -o out"
+  "dotnet publish -c Release -o out"  # Build .NET project
 ]
 
 [start]
