@@ -1,5 +1,5 @@
 [phases.setup]
-nixPkgs = ["dotnet-sdk_8", "nodejs-22"]
+nixPkgs = ["dotnet-sdk_8", "nodejs-22_x"]
 
 [phases.build]
 environment = { NIXPACKS_NODE_VERSION = "22" }
