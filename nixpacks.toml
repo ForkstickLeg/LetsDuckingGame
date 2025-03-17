@@ -2,9 +2,9 @@
 nixPkgs = ["dotnet-sdk_8", "nodejs_20", "yarn"]
 
 [phases.build]
-cacheDirectories = ["/root/.nuget/packages", "/app/LetsDuckingGame.Client/node_modules"]
+cacheDirectories = ["/root/.nuget/packages", "/app/letsduckinggame.client/node_modules"]
 cmds = [
-  "cd LetsDuckingGame.Client && yarn install && yarn build",
+  "cd letsduckinggame.client && yarn install && yarn build",
   "dotnet publish -c Release -o out"
 ]
 
