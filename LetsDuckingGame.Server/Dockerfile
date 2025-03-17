@@ -12,9 +12,6 @@ EXPOSE 8081
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
-# Install Node.js for building the frontend
-RUN curl -fsSL https://deb.nodesource.com/setup_20.x | bash - && \
-    apt-get install -y nodejs
 COPY ["LetsDuckingGame.Server/LetsDuckingGame.Server.csproj", "LetsDuckingGame.Server/"]
 COPY ["letsduckinggame.client/letsduckinggame.client.esproj", "letsduckinggame.client/"]
 RUN dotnet restore "./LetsDuckingGame.Server/LetsDuckingGame.Server.csproj"
