@@ -2,9 +2,7 @@
 nixPkgs = ["dotnet-sdk_8"]
 
 [phases.build]
-environment = {
-  NIXPACKS_NODE_VERSION = "22"
-}
+environment = { NIXPACKS_NODE_VERSION = "22" }
 cacheDirectories = ["/root/.nuget/packages", "/app/LetsDuckingGame.Client/node_modules"]
 cmds = [
   "cd LetsDuckingGame.Client && npm ci && npm run build",
