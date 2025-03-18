@@ -1,6 +1,31 @@
+using Hangfire;
+using Hangfire.PostgreSql;
+using DotNetEnv;
+
+Env.Load();
+
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddEnvironmentVariables();
+
+// Retrieve the connection string from environment variables
+var connectionString = builder.Configuration.GetConnectionString("HangfireConnection")
+                       ?? Environment.GetEnvironmentVariable("HangfireConnection");
+
+if (string.IsNullOrEmpty(connectionString))
+{
+    throw new InvalidOperationException("Hangfire connection string is not set in environment variables.");
+}
 
 // Add services to the container.
+
+builder.Services.AddHangfire(config =>
+{
+    config.UsePostgreSqlStorage(options =>
+    {
+        options.UseNpgsqlConnection(connectionString);
+    });
+});
+builder.Services.AddHangfireServer();
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -15,6 +40,7 @@ app.UseStaticFiles();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
+    app.UseDeveloperExceptionPage();
     app.UseSwagger();
     app.UseSwaggerUI();
 }
@@ -22,6 +48,8 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
+app.UseHangfireDashboard("/hangfire");
 
 app.MapControllers();
 
