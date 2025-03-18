@@ -3,7 +3,6 @@ FROM node:20 AS frontend-builder
 WORKDIR /app
 COPY letsduckinggame.client ./letsduckinggame.client
 WORKDIR /app/letsduckinggame.client
-ENV DOCKER=true
 RUN npm install && npm run build
 
 # Build Stage (Backend)
