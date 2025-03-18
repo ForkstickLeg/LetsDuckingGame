@@ -1,0 +1,33 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35825.156 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "letsduckinggame.client", "letsduckinggame.client\letsduckinggame.client.esproj", "{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LetsDuckingGame.Server", "LetsDuckingGame.Server\LetsDuckingGame.Server.csproj", "{463840AC-7517-40F6-A8D6-0FFAFAE7DE26}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4AB9A5E8-50A0-D9CE-F783-B7D30F231579}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{463840AC-7517-40F6-A8D6-0FFAFAE7DE26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{463840AC-7517-40F6-A8D6-0FFAFAE7DE26}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{463840AC-7517-40F6-A8D6-0FFAFAE7DE26}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{463840AC-7517-40F6-A8D6-0FFAFAE7DE26}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65616095-F450-424B-B7B7-A614FA2CA753}
+	EndGlobalSection
+EndGlobal
