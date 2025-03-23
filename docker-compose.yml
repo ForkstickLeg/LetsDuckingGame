@@ -1,0 +1,12 @@
+services:
+  letsduckinggame:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: letsduckinggame_app
+    restart: unless-stopped
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Production
+      - HangfireConnection=${HANGFIRE_CONNECTION}
+    ports:
+      - "${PORT:-5000}:8080"

@@ -18,5 +18,5 @@ FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=backend-builder /app/published .
 COPY --from=frontend-builder /app/letsduckinggame.client/dist ./wwwroot
-EXPOSE 8081
+EXPOSE 8080
 ENTRYPOINT ["dotnet", "LetsDuckingGame.Server.dll"]
