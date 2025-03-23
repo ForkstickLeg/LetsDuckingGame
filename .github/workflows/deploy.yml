@@ -18,8 +18,10 @@ jobs:
         run: |
           if [[ "${{ github.ref_name }}" == "master" ]]; then
             echo "PORT=4100" >> $GITHUB_ENV
+            echo "HANGFIRE_CONNECTION=${{ secrets.HANGFIRE_CONNECTION }}" >> $GITHUB_ENV
           elif [[ "${{ github.ref_name }}" == "master-next" ]]; then
             echo "PORT=4101" >> $GITHUB_ENV
+            echo "HANGFIRE_CONNECTION=${{ secrets.HANGFIRE_CONNECTION_DEV }}" >> $GITHUB_ENV
           fi
 
       - name: Stop old containers
