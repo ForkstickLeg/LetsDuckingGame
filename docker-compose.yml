@@ -1,5 +1,5 @@
 services:
-  letsduckinggame:
+  letsduckinggameapp:
     build:
       context: .
       dockerfile: Dockerfile

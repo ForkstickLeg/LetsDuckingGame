@@ -11,6 +11,8 @@ builder.Configuration.AddEnvironmentVariables();
 var connectionString = builder.Configuration.GetConnectionString("HANGFIRE_CONNECTION")
                        ?? Environment.GetEnvironmentVariable("HANGFIRE_CONNECTION");
 
+Console.WriteLine($"Hangfire connection string: {connectionString}");
+
 if (string.IsNullOrEmpty(connectionString))
 {
     throw new InvalidOperationException("Hangfire connection string is not set in environment variables.");
