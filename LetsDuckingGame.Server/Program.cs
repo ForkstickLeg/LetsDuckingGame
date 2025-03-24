@@ -8,8 +8,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddEnvironmentVariables();
 
 // Retrieve the connection string from environment variables
-var connectionString = builder.Configuration.GetConnectionString("HangfireConnection")
-                       ?? Environment.GetEnvironmentVariable("HangfireConnection");
+var connectionString = builder.Configuration.GetConnectionString("HANGFIRE_CONNECTION")
+                       ?? Environment.GetEnvironmentVariable("HANGFIRE_CONNECTION");
+
+Console.WriteLine($"Hangfire connection string: {connectionString}");
 
 if (string.IsNullOrEmpty(connectionString))
 {

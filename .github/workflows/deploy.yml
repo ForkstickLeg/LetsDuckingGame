@@ -1,0 +1,41 @@
+name: Deploy with Docker Compose
+
+on:
+  push:
+    branches:
+      - master
+      - master-next
+
+jobs:
+  deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set environment variables based on branch
+        run: |
+          if [[ "${{ github.ref_name }}" == "master" ]]; then
+            echo "PORT=4100" >> $GITHUB_ENV
+            echo "HANGFIRE_CONNECTION=${{ secrets.HANGFIRE_CONNECTION }}" >> $GITHUB_ENV
+          elif [[ "${{ github.ref_name }}" == "master-next" ]]; then
+            echo "PORT=4101" >> $GITHUB_ENV
+            echo "HANGFIRE_CONNECTION=${{ secrets.HANGFIRE_CONNECTION_DEV }}" >> $GITHUB_ENV
+          fi
+
+      - name: Extract branch name
+        id: vars
+        run: echo "COMPOSE_PROJECT_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
+      - name: Stop old containers
+        run: |
+          docker compose down --remove-orphans
+
+      - name: Build and deploy with Docker Compose
+        run: |
+          docker compose up -d --build
+
+      - name: Verify containers are running
+        run: |
+          docker ps
