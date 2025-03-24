@@ -3,7 +3,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: lets_ducking_game_app
+    container_name: ${CONTAINER_NAME}
     restart: unless-stopped
     environment:
       - ASPNETCORE_ENVIRONMENT=Production
