@@ -24,6 +24,10 @@ jobs:
             echo "HANGFIRE_CONNECTION=${{ secrets.HANGFIRE_CONNECTION_DEV }}" >> $GITHUB_ENV
           fi
 
+      - name: Extract branch name
+        id: vars
+        run: echo "COMPOSE_PROJECT_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+
       - name: Stop old containers
         run: |
           docker compose down --remove-orphans

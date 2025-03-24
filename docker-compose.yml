@@ -1,4 +1,3 @@
-name: lets_ducking_game_webapp
 services:
   letsduckinggameapp:
     build:
