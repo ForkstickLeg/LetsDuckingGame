@@ -27,7 +27,7 @@ jobs:
       - name: Extract branch name
         id: vars
         run: |
-          echo "COMPOSE_PROJECT_NAME=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          echo "COMPOSE_PROJECT_NAME=lets_ducking_game_${GITHUB_REF##*/}" >> $GITHUB_ENV
           echo "CONTAINER_NAME=lets_ducking_game_app_${GITHUB_REF##*/}" >> $GITHUB_ENV
 
       - name: Stop old containers
