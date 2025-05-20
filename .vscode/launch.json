@@ -1,0 +1,35 @@
+{
+  "version": "0.2.0",
+  "compounds": [
+    {
+      "name": "Fullstack Debug",
+      "configurations": ["Launch Vue", "Launch .NET Backend"],
+      "stopAll": true
+    }
+  ],
+  "configurations": [
+    {
+      "name": "Launch Full App",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/client",
+      "preLaunchTask": "Start Fullstack Dev Server"
+    },
+    {
+      "name": "Launch Vue",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:5173",
+      "webRoot": "${workspaceFolder}/client",
+      "preLaunchTask": "Start Vue Dev Server"
+    },
+    {
+      "name": "Launch .NET Backend",
+      "type": "coreclr",
+      "request": "launch",
+      "preLaunchTask": "Start .NET Backend",
+      "program": "${workspaceFolder}/server/bin/Debug/net9.0/server.dll"
+    }
+  ]
+}
