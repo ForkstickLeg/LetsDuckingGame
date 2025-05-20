@@ -1,0 +1,49 @@
+{
+  "folders": [
+    {
+      "path": "client"
+    },
+    {
+      "path": "server"
+    }
+  ],
+  "settings": {
+    // General
+    "editor.formatOnSave": true,
+    "files.exclude": {
+      "**/bin": true,
+      "**/obj": true,
+      "**/dist": true,
+      "**/node_modules": true
+    },
+
+    // TypeScript/Vue
+    "[typescript]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[vue]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // C#
+    "[csharp]": {
+      "editor.defaultFormatter": "ms-dotnettools.csharp"
+    },
+
+    // Terminal per project
+    "terminal.integrated.cwd": "${workspaceFolder}"
+  },
+  "tasks": {
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Dev: Full Stack",
+        "type": "shell",
+        "command": "npm run dev",
+        "problemMatcher": [],
+        "group": "build",
+        "detail": "Starts both frontend and backend concurrently via root-level script"
+      }
+    ]
+  }
+}
