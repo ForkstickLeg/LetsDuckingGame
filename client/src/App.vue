@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+
 //import LandingPage from './pages/LandingPage.vue';
 </script>
 
@@ -11,7 +12,6 @@ import HelloWorld from './components/HelloWorld.vue'
       <div>
         Login
       </div>
-
       <div>
         Your Stuff
       </div>
@@ -21,7 +21,7 @@ import HelloWorld from './components/HelloWorld.vue'
 
 <style scoped>
   .hello-world {
-    justify-content: flex-start;
+    justify-content: space-between;
     display: flex;
     flex-direction: row;
   }
@@ -30,4 +30,9 @@ import HelloWorld from './components/HelloWorld.vue'
     display: flex;
     flex-direction: column;
   }
+  .left, .right {
+    flex: 1;
+    padding: 40px;
+  }
+
 </style>
