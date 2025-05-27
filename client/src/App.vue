@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+import {Info, Login, Stuff} from './components/Landing/*'
+
 
 //import LandingPage from './pages/LandingPage.vue';
 </script>
 
 <template>
   <div class="hello-world">
-    <HelloWorld msg="Lets Ducking Game"/>
-
-    <div class="test-now">
-      <div>
+    <div class="left">
+      <HelloWorld msg="Lets Ducking Game"/>
+    </div>
+    <div class="right">
+      <div class="login">
         Login
       </div>
-      <div>
+      <div class="stuff">
         Your Stuff
       </div>
     </div>
@@ -24,8 +27,12 @@ import HelloWorld from './components/HelloWorld.vue'
     justify-content: space-between;
     display: flex;
     flex-direction: row;
+    border: 1rem solid blue
   }
-  .test-now {
+  .left {
+    border: 1rem solid red;
+  }
+  .right {
     justify-content: center;
     display: flex;
     flex-direction: column;
@@ -33,6 +40,11 @@ import HelloWorld from './components/HelloWorld.vue'
   .left, .right {
     flex: 1;
     padding: 40px;
+    
+  }
+  .login, .stuff {
+    height: 25%;
+    border: 1rem solid purple;
   }
 
 </style>
