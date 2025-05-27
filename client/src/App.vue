@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
+//import LandingPage from './pages/LandingPage.vue';
 </script>
 
 <template>
@@ -11,7 +12,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
     </a>
   </div>
-  <HelloWorld msg="Vite + Vue" />
+  <div class="hello-world">
+    <HelloWorld msg="Lets Ducking Game"/>
+  <div>Login</div>
+  </div>
 </template>
 
 <style scoped>
@@ -26,5 +30,10 @@ import HelloWorld from './components/HelloWorld.vue'
 }
 .logo.vue:hover {
   filter: drop-shadow(0 0 2em #42b883aa);
+}
+.hello-world {
+  justify-content: flex-start;
+  display: flex;
+  flex-direction: row;
 }
 </style>
