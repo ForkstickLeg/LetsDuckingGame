@@ -1,1 +1,3 @@
-export Info from './Info.vue';
+<template>
+    <h1>Lets Ducking Game</h1>
+</template>

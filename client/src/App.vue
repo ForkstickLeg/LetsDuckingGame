@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
-import {Info, Login, Stuff} from './components/Landing/*'
-
+import Login from './components/Landing/Login.vue';
+import Stuff from './components/Landing/Stuff.vue';
+import Info from './components/Landing/Info.vue';
 
 //import LandingPage from './pages/LandingPage.vue';
 </script>
@@ -9,14 +9,14 @@ import {Info, Login, Stuff} from './components/Landing/*'
 <template>
   <div class="hello-world">
     <div class="left">
-      <HelloWorld msg="Lets Ducking Game"/>
+      <Info/>
     </div>
     <div class="right">
       <div class="login">
-        Login
+        <Login/>
       </div>
       <div class="stuff">
-        Your Stuff
+        <Stuff/>
       </div>
     </div>
   </div>
@@ -27,7 +27,8 @@ import {Info, Login, Stuff} from './components/Landing/*'
     justify-content: space-between;
     display: flex;
     flex-direction: row;
-    border: 1rem solid blue
+    border: 1rem solid blue;
+    width: 100%;
   }
   .left {
     border: 1rem solid red;
