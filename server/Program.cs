@@ -44,6 +44,7 @@ public class Program
                     Summary = summaries[Random.Shared.Next(summaries.Length)]
                 })
                 .ToArray();
+                //TODO: make not random
             return forecast;
         })
         .WithName("GetWeatherForecastApi");
