@@ -1,21 +1,34 @@
 <template>
   <div class="text-center pa-4">
-    <v-btn @click="dialog = true">
-      Login
-    </v-btn>
+    <v-btn @click="dialog = true"> Login </v-btn>
 
     <v-dialog v-model="dialog" width="auto">
-      <v-card max-width="400" prepend-icon="mdi-update"
-        text="this is where the login" title="lgoin pls">
+      <v-card
+        max-width="400"
+        prepend-icon="mdi-update"
+        text="this is where the login"
+        title="lgoin pls"
+      >
+      <input
+              type="text"
+              placeholder="Username"
+              class="pa-2">
+        </input>
+        <input
+              type="password"
+              placeholder="Password"
+              class="pa-2">
+        </input>
+        <a href="login">Forgor?</a>
         <template v-slot:actions>
-          <v-btn class="ms-auto" text="Ok" @click="dialog = false"></v-btn>
+          <v-btn text="Submit" @click="dialog = false"></v-btn>
         </template>
       </v-card>
     </v-dialog>
   </div>
 </template>
 <script setup>
-import { ref } from 'vue'
+import { ref } from "vue";
 
-const dialog = ref(false)
+const dialog = ref(false);
 </script>
