@@ -5,7 +5,7 @@ const router = createRouter({
     routes: [{
         path: '/',
         name: 'default',
-        component: () => import('../pages/DefaultPage.vue'),
+        component: () => import('../pages/LandingPage.vue'),
     },
     {
         path: '/Landing',
@@ -13,9 +13,9 @@ const router = createRouter({
         component: () => import('../pages/LandingPage.vue'),
     },
     {
-        path: '/HelloWorld',
-        name: 'HelloWorld',
-        component: () => import('../pages/HelloWorld.vue'),
+        path: '/ForgotPassword',
+        name: 'ForgotPassword',
+        component: () => import('../pages/ForgotPassword.vue'),
     }
 ]
     
