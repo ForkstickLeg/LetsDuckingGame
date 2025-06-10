@@ -20,7 +20,7 @@
               class="pa-2">
         </input>
         <nav>
-          <RouterLink to="/">Forgot</RouterLink>">
+          <RouterLink to="/HelloWorld">Forgot</RouterLink>">
             <v-btn text>Register</v-btn>
         </nav>
         

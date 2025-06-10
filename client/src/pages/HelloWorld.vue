@@ -1,14 +1,8 @@
 <script setup lang="ts">
-import { ref } from 'vue'
 
-defineProps<{ msg: string }>()
-
+const msg = 'Hello World This is a New PAGE';
 </script>
 
 <template>
   <h1>{{ msg }}</h1>
 </template>
-
-<style scoped>
-
-</style>
