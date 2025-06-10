@@ -19,16 +19,26 @@
               placeholder="Password"
               class="pa-2">
         </input>
-        <a href="login">Forgor?</a>
+        <nav>
+          <RouterLink to="/">Forgot</RouterLink>">
+            <v-btn text>Register</v-btn>
+        </nav>
+        
         <template v-slot:actions>
           <v-btn text="Submit" @click="dialog = false"></v-btn>
         </template>
       </v-card>
     </v-dialog>
   </div>
+  <main>
+    <RouterView>
+      
+    </RouterView>
+  </main>
 </template>
 <script setup>
 import { ref } from "vue";
+
 
 const dialog = ref(false);
 </script>

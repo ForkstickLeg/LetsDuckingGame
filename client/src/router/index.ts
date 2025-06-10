@@ -6,6 +6,14 @@ const router = createRouter({
         path: '/',
         name: '(Optional) Test',
         component: () => import('../pages/LandingPage.vue'),
-    }]
+    },
+    {
+        path: '/HelloWorld',
+        name: 'HelloWorld',
+        component: () => import('../pages/HelloWorld.vue'),
+    }
+]
+    
 })
 
+export default router
